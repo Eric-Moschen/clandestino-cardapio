@@ -38,7 +38,13 @@ export async function saveStaff(formData: FormData) {
   const password = value(formData, "password");
   const displayName = value(formData, "display_name");
   const isActive = formData.get("is_active") === "on";
-  if (!email || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email) || password.length < 8 || !displayName || displayName.length > 100) {
+  if (
+    !email ||
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+    password.length < 8 ||
+    !displayName ||
+    displayName.length > 100
+  ) {
     redirect("/admin/staff?error=invalid");
   }
   let service;
