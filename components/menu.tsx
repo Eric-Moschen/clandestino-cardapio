@@ -29,7 +29,7 @@ export default function Menu({
 
   const chamarGarcomUrl = mesa
     ? `/mesa?mesa=${encodeURIComponent(mesa)}`
-    : "/";
+    : "/mesa";
 
   const categories = useMemo(
     () => [

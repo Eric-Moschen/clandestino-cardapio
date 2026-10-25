@@ -51,6 +51,15 @@ export default function LandingActions({ tables, initialTable }: { tables: Table
       {tables.length === 0 && <p className="callMessage">As mesas ainda não foram configuradas. Procure um funcionário.</p>}
       {message && <p className={success ? "callMessage successText" : "callMessage"} role="status">{message}</p>}
     </div>
-    <Link className="menuLinkButton" href="/cardapio">Ver cardápio <span>↗</span></Link>
+    <Link
+      className="menuLinkButton"
+      href={
+        initialTable
+          ? `/cardapio?mesa=${encodeURIComponent(initialTable)}`
+          : "/cardapio"
+      }
+    >
+      Ver cardápio <span>↗</span>
+    </Link>
   </>;
 }
