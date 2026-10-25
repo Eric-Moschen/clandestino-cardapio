@@ -264,7 +264,6 @@ export default function Menu({
                   autoPlay
                   loop
                   muted
-                  controls
                   playsInline
                   preload="metadata"
                   poster={
