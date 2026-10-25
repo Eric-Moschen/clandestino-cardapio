@@ -22,7 +22,7 @@ export async function signInAdmin(formData: FormData) {
     await supabase.auth.signOut();
     redirect("/admin/login?error=unauthorized");
   }
-  redirect("/admin");
+  redirect("/admin?sessionStart=1");
 }
 
 export async function signOutAdmin() {
